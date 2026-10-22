@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:id="@+id/textSettingsTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add Weight and Goal"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="18dp" />
+
+        <TextView
+            android:id="@+id/textDailyWeightLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Daily Weight Entry"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:layout_marginBottom="6dp" />
+
+        <EditText
+            android:id="@+id/editTextWeightDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Select date"
+            android:focusable="false"
+            android:clickable="true"
+            android:inputType="none"
+            android:layout_marginTop="14dp"
+            android:layout_marginBottom="12dp" />
+
+        <EditText
+            android:id="@+id/editTextDailyWeight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Weight in pounds"
+            android:inputType="numberDecimal"
+            android:layout_marginTop="8dp" />
+
+        <Button
+            android:id="@+id/buttonSaveWeight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Save Daily Weight"
+            android:layout_marginTop="12dp" />
+
+        <TextView
+            android:id="@+id/textGoalLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Goal Weight"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:layout_marginTop="28dp" />
+
+        <EditText
+            android:id="@+id/editTextGoalWeight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Goal weight in pounds"
+            android:inputType="numberDecimal"
+            android:layout_marginTop="8dp" />
+
+        <Button
+            android:id="@+id/buttonSaveGoal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Save Goal Weight"
+            android:layout_marginTop="12dp" />
+
+        <TextView
+            android:id="@+id/textSmsPermissionInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="SMS notifications can alert you when you reach your goal weight."
+            android:layout_marginTop="28dp" />
+
+        <EditText
+            android:id="@+id/editTextPhoneNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Phone number for SMS alert"
+            android:inputType="phone"
+            android:layout_marginTop="12dp" />
+
+        <Button
+            android:id="@+id/buttonEnableSms"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Enable SMS Notifications"
+            android:layout_marginTop="12dp" />
+
+        <TextView
+            android:id="@+id/textSmsStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="SMS Permission Status: Not enabled"
+            android:layout_marginTop="10dp" />
+
+        <Button
+            android:id="@+id/buttonBackToDashboard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Back to Weight History"
+            android:layout_marginTop="28dp" />
+
+    </LinearLayout>
+
+</ScrollView>
