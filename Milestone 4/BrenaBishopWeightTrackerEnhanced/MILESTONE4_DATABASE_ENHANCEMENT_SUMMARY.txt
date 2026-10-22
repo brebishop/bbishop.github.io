@@ -1,0 +1,29 @@
+CS 499 Milestone Four - Database Enhancement
+
+Implemented database improvements:
+- Database version increased from 1 to 2.
+- Replaced plain-text password storage with salted PBKDF2-HMAC-SHA256 hashes.
+- Added PasswordHasher.java for password creation and verification.
+- Added foreign-key relationships from daily_weights.user_id and goal_weights.user_id to users.id.
+- Enabled SQLite foreign-key enforcement and ON DELETE CASCADE behavior.
+- Added a composite index on daily_weights(user_id, entry_date DESC).
+- Changed stored dates to ISO YYYY-MM-DD so database sorting is chronological.
+- Kept MM/DD/YYYY formatting in the UI when weight history is displayed.
+- Changed update/delete operations to require both the record ID and authenticated user ID.
+- Replaced drop-and-recreate onUpgrade behavior with a version 1 -> 2 migration that preserves existing users, weight records, goals, and phone numbers.
+- Existing plain-text passwords are converted to hashes during migration.
+- Existing MM/DD/YYYY dates are converted to ISO storage during migration.
+- Preserved Milestone Two software-design refactor and Milestone Three trend analysis.
+
+Recommended test sequence in Android Studio:
+1. Open the project root and allow Gradle sync to finish.
+2. Run the app with the existing emulator.
+3. If upgrading from the previous installed version, verify an existing account can still log in and historical weights/goals remain.
+4. Create a new account and confirm login works with the new credentials.
+5. Add weight entries on dates from different months/years and confirm newest entries display first.
+6. Edit and delete a weight entry and verify normal CRUD behavior still works.
+7. Verify trend analysis still appears on Weight History.
+8. Verify goal-reached dialog/SMS behavior still works.
+
+Build note:
+A full Gradle build could not be completed in the generation environment because the Gradle wrapper attempted to download Gradle 9.4.1 and outbound network access is disabled. The project includes the complete Gradle wrapper/project structure for Android Studio.
